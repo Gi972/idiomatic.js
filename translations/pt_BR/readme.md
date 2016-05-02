@@ -2,7 +2,7 @@
 
 ## Este é um documento vivo e novas ideias para melhorar os códigos correspondentes são sempre bem vindas. Contribua: faça fork, clone, branch, commit, push, pull request.
 
-* Rick Waldron [@rwaldron](http://twitter.com/rwaldron), [github](https://github.com/rwldrn)
+* Rick Waldron [@rwaldron](http://twitter.com/rwaldron), [github](https://github.com/rwaldron)
 * Mathias Bynens [@mathias](http://twitter.com/mathias), [github](https://github.com/mathiasbynens)
 * Schalk Neethling [@ossreleasefeed](http://twitter.com/ossreleasefeed), [github](https://github.com/ossreleasefeed/)
 * Kit Cambridge  [@kitcambridge](http://twitter.com/kitcambridge), [github](https://github.com/kitcambridge)
@@ -23,6 +23,8 @@
 * Sofish Lin [@sofish](http://twitter.com/sofish), [github](https://github.com/sofish)
 * Дејан Димић [@dejan_dimic](http://twitter.com/dejan_dimic), [github](https://github.com/rubystream)
 * Miloš Gavrilović [@gavrisimo](http://twitter.com/gavrisimo), [github](https://github.com/gavrisimo)
+* Duc Nguyen [@ducntq](https://twitter.com/ducntq), [github](https://github.com/ducntq)
+* James Young [@jamsyoung](http://twitter.com/jamsyoung), [github](https://github.com/jamsyoung)
 
 
 ## Todo código em qualquer aplicação deve parecer como se tivesse sido escrito por uma única pessoa, independentemente de quantas pessoas tenham contribuído.
@@ -66,6 +68,7 @@
  * [JavaScript Lint (JSL)](http://javascriptlint.com/)
  * [jshint](http://jshint.com/)
  * [jslint](http://jslint.org/)
+ * [Editorconfig](http://editorconfig.org/)
 
 ## Fique ligado
 
@@ -409,50 +412,50 @@ As seções a seguir descrevem um guia de estilos razoável para desenvolvimento
     A. Tipos existentes
 
     String:
-
+    ```javascript
       typeof variavel === "string"
-
+    ```
     Number:
-
+    ```javascript
       typeof variavel === "number"
-
+    ```
     Boolean:
-
+    ```javascript
       typeof variavel === "boolean"
-
+    ```
     Object:
-
+    ```javascript
       typeof variavel === "object"
-
+    ```
     Array:
-
+    ```javascript
       Array.isArray( variavel )
-      (quando possível)
-
+      // (quando possível)
+    ```
     null:
-
+    ```javascript
       variavel === null
-
+    ```
     null ou undefined:
-
+    ```javascript
       variavel == null
-
+    ```
     undefined:
 
       Variáveis Globais:
-
+    ```javascript
         typeof variavel === "undefined"
-
+    ```
       Variáveis Locais:
-
+    ```javascript
         variavel === undefined
-
+    ```
       Propriedades:
-
+    ```javascript
         object.prop === undefined
         object.hasOwnProperty( prop )
         "prop" in object
-
+    ```
     B. Tipos coagidos
 
     Considere as implicações do seguinte...
@@ -1255,9 +1258,7 @@ As seções a seguir descrevem um guia de estilos razoável para desenvolvimento
 
   #### “Everything is Permitted: Extending Built-ins” por Andrew Dupont (JSConf2011, Portland, Oregon)
 
-  <iframe src="http://blip.tv/play/g_Mngr6LegI.html" width="480" height="346" frameborder="0" allowfullscreen></iframe><embed type="application/x-shockwave-flash" src="http://a.blip.tv/api.swf#g_Mngr6LegI" style="display:none"></embed>
-
-  http://blip.tv/jsconf/jsconf2011-andrew-dupont-everything-is-permitted-extending-built-ins-5211542
+  http://www.everytalk.tv/talks/441-JSConf-Everything-is-Permitted-Extending-Built-ins
 
 
 9. <a name="comments">Comentários</a>

@@ -2,7 +2,7 @@
 
 ## Это "живой" документ и новые идеи по улучшению когда всегда приветствуются. Примите участие: fork, clone, branch, commit, push, pull request. ***
 
-* Rick Waldron [@rwaldron](http://twitter.com/rwaldron), [github](https://github.com/rwldrn)
+* Rick Waldron [@rwaldron](http://twitter.com/rwaldron), [github](https://github.com/rwaldron)
 * Mathias Bynens [@mathias](http://twitter.com/mathias), [github](https://github.com/mathiasbynens)
 * Schalk Neethling [@ossreleasefeed](http://twitter.com/ossreleasefeed), [github](https://github.com/ossreleasefeed/)
 * Kit Cambridge  [@kitcambridge](http://twitter.com/kitcambridge), [github](https://github.com/kitcambridge)
@@ -23,6 +23,9 @@
 * Sofish Lin [@sofish](http://twitter.com/sofish), [github](https://github.com/sofish)
 * Дејан Димић [@dejan_dimic](http://twitter.com/dejan_dimic), [github](https://github.com/rubystream)
 * Miloš Gavrilović [@gavrisimo](http://twitter.com/gavrisimo), [github](https://github.com/gavrisimo)
+* Aleksandr Filatov [@greybax] (http://twitter.com/greybax), [github](https://github.com/greybax)
+* Duc Nguyen [@ducntq](https://twitter.com/ducntq), [github](https://github.com/ducntq)
+* James Young [@jamsyoung](http://twitter.com/jamsyoung), [github](https://github.com/jamsyoung)
 
 
 ## Код в любом проекте должен выглядеть так, будто его писал один человек, неважно как много людей работали над ним. ***
@@ -66,6 +69,7 @@
  * [JavaScript Lint (JSL)](http://javascriptlint.com/)
  * [jshint](http://jshint.com/)
  * [jslint](http://jslint.org/)
+ * [Editorconfig](http://editorconfig.org/)
 
 [Использование инструментов по улучшению качества кода от Антона Ковалева](http://anton.kovalyov.net/slides/gothamjs/)
 
@@ -126,7 +130,7 @@
 
 
 
-## Манифест Идиоматического Стиля
+## Манифест идиоматического стиля
 
 1. <a name="whitespace">Пробелы, табуляция и пустые строки</a>
   - Никогда не мешайте пробел и знак табуляции.
@@ -140,7 +144,7 @@
 
 2. <a name="spacing">Красивый Синтаксис</a>
 
-    A. Скобки, Фигурные Скобки, Переносы Строк
+    A. Скобки, Фигурные скобки, Переносы строк
 
     ```javascript
 
@@ -355,7 +359,7 @@
 
     ```
 
-    D. Консистентность Всегда Побеждает
+    D. Консистентность всегда побеждает
 
     В секции 2.A-2.C, правила использования пробела и знака табуляции установлены с простой целью: консистентность.
     Очень важно отметить, что предпочтения в форматировании, такие как "внутренний пробел", должны считаться опциональными, но в вашем проекте должен использоваться только один стиль форматирования.
@@ -775,7 +779,7 @@
           array: [ 1, 2, 3, 4 ],
           // Свойство - объект
           object: {
-            lang: "en-Us"
+            lang: "ru-RU"
           },
           getData: function() {
             // получить текущее значение переменной `data`
@@ -926,7 +930,7 @@
 
     B. "Лица" `this`
 
-    Кроме хорошо известного применения `call` и `apply`, старайтесь использовать `.bind( this )` или его функциональный эквивалент для объявления `СвязаннойФункции` для дальнейшего вызова. Создание алиаса является последней мерой, если другие решения не подходят.
+    Кроме хорошо известного применения `call` и `apply`, старайтесь использовать `.bind(this)` или его функциональный эквивалент для объявления `СвязаннойФункции` для дальнейшего вызова. Создание алиаса является последней мерой, если другие решения не подходят.
 
     ```
 
@@ -1199,9 +1203,7 @@
 
     #### “Everything is Permitted: Extending Built-ins” by Andrew Dupont (JSConf2011, Portland, Oregon)
 
-    <iframe src="http://blip.tv/play/g_Mngr6LegI.html" width="480" height="346" frameborder="0" allowfullscreen></iframe><embed type="application/x-shockwave-flash" src="http://a.blip.tv/api.swf#g_Mngr6LegI" style="display:none"></embed>
-
-    http://blip.tv/jsconf/jsconf2011-andrew-dupont-everything-is-permitted-extending-built-ins-5211542
+    http://www.everytalk.tv/talks/441-JSConf-Everything-is-Permitted-Extending-Built-ins
 
 
 9. <a name="comments">Комментарии</a>
@@ -1220,4 +1222,4 @@
 
 ### Первая Запятая.
 
-Любой проект, который ссылается на этот документ в качестве руководства по стилю, не примет форматирование кода "первой запятой", только если автор специально не укажется этого.
+Любой проект, который ссылается на этот документ в качестве руководства по стилю, не примет форматирование кода "первой запятой", только если автор специально не указал этого.

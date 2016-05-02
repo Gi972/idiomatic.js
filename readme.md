@@ -3,7 +3,7 @@
 
 ## This is a living document and new ideas for improving the code around us are always welcome. Contribute: fork, clone, branch, commit, push, pull request.
 
-* Rick Waldron [@rwaldron](http://twitter.com/rwaldron), [github](https://github.com/rwldrn)
+* Rick Waldron [@rwaldron](http://twitter.com/rwaldron), [github](https://github.com/rwaldron)
 * Mathias Bynens [@mathias](http://twitter.com/mathias), [github](https://github.com/mathiasbynens)
 * Schalk Neethling [@ossreleasefeed](http://twitter.com/ossreleasefeed), [github](https://github.com/ossreleasefeed/)
 * Kit Cambridge  [@kitcambridge](http://twitter.com/kitcambridge), [github](https://github.com/kitcambridge)
@@ -29,7 +29,10 @@
 * Stephan Lindauer [@stephanlindauer](http://twitter.com/stephanlindauer), [github](https://github.com/stephanlindauer)
 * Thomas P [@dragon5689](https://twitter.com/dragon5689) [github](https://github.com/dragon5689)
 * Yotam Ofek [@yotamofek](https://twitter.com/yotamofek) [github](https://github.com/yotamofek)
-
+* Aleksandr Filatov [@greybax](http://twitter.com/greybax), [github](https://github.com/greybax)
+* Duc Nguyen [@ducntq](https://twitter.com/ducntq), [github](https://github.com/ducntq)
+* James Young [@jamsyoung](http://twitter.com/jamsyoung), [github](https://github.com/jamsyoung)
+* Hao-Wei Jeng [@l0ckys](http://twitter.com/l0ckys), [github](https://github.com/lockys)  
 
 
 ## All code in any code-base should look like a single person typed it, no matter how many people contributed.
@@ -55,14 +58,14 @@
 * [Spanish](https://github.com/rwldrn/idiomatic.js/tree/master/translations/es_ES)
 * [Portuguese - Brazil](https://github.com/rwldrn/idiomatic.js/tree/master/translations/pt_BR)
 * [Korean](https://github.com/rwldrn/idiomatic.js/tree/master/translations/ko_KR)
-* [Japanese](https://github.com/rwldrn/idiomatic.js/tree/master/translations/ja_JP)
+* [日本語](https://github.com/rwldrn/idiomatic.js/tree/master/translations/ja_JP)
 * [Italian](https://github.com/rwldrn/idiomatic.js/tree/master/translations/it_IT)
 * [Russian](https://github.com/rwldrn/idiomatic.js/tree/master/translations/ru_RU)
 * [Romanian](https://github.com/rwldrn/idiomatic.js/tree/master/translations/ro_RO)
 * [简体中文](https://github.com/rwldrn/idiomatic.js/tree/master/translations/zh_CN)
 * [Serbian - cyrilic alphabet](https://github.com/rwldrn/idiomatic.js/tree/master/translations/ср_СР)
-* [Serbian - latin aplphabet](https://github.com/rwldrn/idiomatic.js/tree/master/translations/sr_SR)
-
+* [Serbian - latin alphabet](https://github.com/rwldrn/idiomatic.js/tree/master/translations/sr_SR)
+* [繁體中文](https://github.com/rwaldron/idiomatic.js/tree/master/translations/zh_TW)  
 
 ## Important, Non-Idiomatic Stuff:
 
@@ -72,10 +75,16 @@
  * [Plato](https://github.com/es-analysis/plato)
  * [jsPerf](http://jsperf.com/)
  * [jsFiddle](http://jsfiddle.net/)
+ * [Codepen](http://codepen.io/)
  * [jsbin](http://jsbin.com/)
  * [JavaScript Lint (JSL)](http://javascriptlint.com/)
  * [jshint](http://jshint.com/)
  * [jslint](http://jslint.org/)
+ * [eslint](http://eslint.org/)
+ * [jscs](https://www.npmjs.org/package/jscs)
+ * [jscodesniffer](https://www.npmjs.org/package/jscodesniffer)
+ * [Editorconfig](http://editorconfig.org/)
+ * [Hound](https://houndci.com/)
 
 ## Get Smart
 
@@ -84,7 +93,7 @@
 
 The following should be considered 1) incomplete, and 2) *REQUIRED READING*. I don't always agree with the style written by the authors below, but one thing is certain: They are consistent. Furthermore, these are authorities on the language.
 
- * [Baseline For Front End Developers](http://rmurphey.com/blog/2012/04/12/a-baseline-for-front-end-developers/)
+ * [Baseline For Front End Developers: 2015](http://rmurphey.com/blog/2015/03/23/a-baseline-for-front-end-developers-2015/)
  * [Eloquent JavaScript](http://eloquentjavascript.net/)
  * [JavaScript, JavaScript](http://javascriptweblog.wordpress.com/)
  * [Adventures in JavaScript Development](http://rmurphey.com/)
@@ -114,6 +123,7 @@ Projects _must_ include some form of unit, reference, implementation or function
  * [JsTestDriver](https://code.google.com/p/js-test-driver/)
  * [Buster.js](http://busterjs.org/)
  * [Sinon.js](http://sinonjs.org/)
+ * [Tape](https://github.com/substack/tape)
 
 ## Table of Contents
 
@@ -153,6 +163,7 @@ The following sections outline a _reasonable_ style guide for modern JavaScript 
       - Eliminating end of line whitespace
       - Eliminating blank line whitespace
       - Commits and diffs that are easier to read
+  - Use [Editorconfig](http://editorconfig.org/) when possible.  It supports most IDEs and handles most whitespace settings.
 
 
 2. <a name="spacing">Beautiful Syntax</a>
@@ -238,18 +249,28 @@ The following sections outline a _reasonable_ style guide for modern JavaScript 
 
 
     // 2.B.1.2
-    // Using only one `var` per scope (function) promotes readability
-    // and keeps your declaration list free of clutter (also saves a few keystrokes)
+    // Using only one `var` per scope (function) or one `var` for each variable,
+    // promotes readability and keeps your declaration list free of clutter.
+    // Using one `var` per variable you can take more control of your versions
+    // and makes it easier to reorder the lines.
+    // One `var` per scope makes it easier to detect undeclared variables
+    // that may become implied globals.
+    // Choose better for your project and never mix them.
 
     // Bad
+    var foo = "",
+      bar = "";
+    var qux;
+
+    // Good
     var foo = "";
     var bar = "";
     var qux;
 
-    // Good
+    // or..
     var foo = "",
       bar = "",
-      quux;
+      qux;
 
     // or..
     var // Comment on these
@@ -259,7 +280,7 @@ The following sections outline a _reasonable_ style guide for modern JavaScript 
 
     // 2.B.1.3
     // var statements should always be in the beginning of their respective scope (function).
-    
+
 
     // Bad
     function foo() {
@@ -277,15 +298,15 @@ The following sections outline a _reasonable_ style guide for modern JavaScript 
 
       // all statements after the variables declarations.
     }
-    
+
     // 2.B.1.4
     // const and let, from ECMAScript 6, should likewise be at the top of their scope (block).
-    
+
     // Bad
     function foo() {
       let foo,
         bar;
-      if (condition) {
+      if ( condition ) {
         bar = "";
         // statements
       }
@@ -293,7 +314,7 @@ The following sections outline a _reasonable_ style guide for modern JavaScript 
     // Good
     function foo() {
       let foo;
-      if (condition) {
+      if ( condition ) {
         let bar = "";
         // statements
       }
@@ -1132,7 +1153,7 @@ The following sections outline a _reasonable_ style guide for modern JavaScript 
     There seems to be drastic improvements to the execution of `switch` statements in latest releases of Firefox and Chrome.
     http://jsperf.com/switch-vs-object-literal-vs-module
 
-    Notable improvements can be witnesses here as well:
+    Notable improvements can be witnessed here as well:
     https://github.com/rwldrn/idiomatic.js/issues/13
 
     ```javascript
@@ -1276,9 +1297,7 @@ The following sections outline a _reasonable_ style guide for modern JavaScript 
 
     #### “Everything is Permitted: Extending Built-ins” by Andrew Dupont (JSConf2011, Portland, Oregon)
 
-    <iframe src="http://blip.tv/play/g_Mngr6LegI.html" width="480" height="346" frameborder="0" allowfullscreen></iframe><embed type="application/x-shockwave-flash" src="http://a.blip.tv/api.swf#g_Mngr6LegI" style="display:none"></embed>
-
-    http://blip.tv/jsconf/jsconf2011-andrew-dupont-everything-is-permitted-extending-built-ins-5211542
+    http://www.everytalk.tv/talks/441-JSConf-Everything-is-Permitted-Extending-Built-ins
 
 
 9. <a name="comments">Comments</a>
